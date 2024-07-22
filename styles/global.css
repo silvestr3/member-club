@@ -35,12 +35,14 @@
 body {
     background-color: var(--gray-200);
     font-family: var(--ff);
-    display: flex;
-    justify-content: center;
 }
 
 
 h1 {
     font: var(--title-sm);
     color: var(--gray-600);
+}
+
+ul {
+    list-style: none;
 }

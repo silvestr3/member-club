@@ -1,0 +1,173 @@
+main#content{
+    margin-top: 4rem;
+    max-width: 70rem;
+    padding-inline: 1rem;
+    width: 100%;
+    height: 30rem;
+    margin-inline: auto;
+
+    & .card {
+        background-color: var(--gray-100);
+        border: 1px solid var(--gray-300);
+
+        border-radius: 1rem;
+    }
+
+    display: grid;
+    gap: 1rem 1.5rem;
+    grid-template-rows: 1fr 3fr 1fr;
+    grid-template-columns: 2fr repeat(1fr, 3);
+    grid-template-areas: 
+    "A B B B"
+    "C B B B"
+    "C D D D";
+
+    & div#user-info{
+        grid-area: A;
+        padding: 1rem;
+        height: fit-content;
+
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 1rem;
+
+        & .img-container {
+            padding: 2px;
+            border-radius: .625rem;
+            background: linear-gradient(
+                -45deg,
+                #2DAA6E 0%,
+                #2DAAAA 33.33%,
+                #856CCF 66.67%,
+                #D658B3 100%
+            );
+
+            & img {
+                aspect-ratio: 1/1;
+                object-fit: contain;
+                overflow: hidden;
+            }
+        }
+
+        & div {
+            display: flex;
+            flex-direction: column;
+            gap: .25rem;
+
+            & span {
+                color: var(--gray-500);
+                font: var(--text-xs);
+            }
+        }
+    }
+
+    & div#appointment-history{
+        grid-area: C;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        padding: 1.75rem 1.75rem 1.5rem 1.5rem;
+
+        & #history-amount {
+            display: flex;
+            align-items: center;
+            padding-right: 1rem;
+            justify-content: space-between;
+            color: var(--gray-500);
+
+            & h2 {
+                font: var(--subtitle-sm);
+                text-transform: uppercase;
+            }
+
+            & span {
+                font: var(--text-sm);
+            }
+        }
+
+        & #history-list {
+            overflow-y: auto;
+            padding-right: 1rem;
+
+            &::-webkit-scrollbar {
+                width: 10px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: var(--gray-300);
+                border-radius: 20px;
+            }
+
+            & li + li {
+                margin-block: .75rem;
+            }
+
+            & .border {
+                height: 1px;
+                width: 100%;
+                top: 0;
+                background-color: var(--gray-200);
+                margin-block: .5rem 1rem;
+            }
+
+            & li.history-item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: .15rem;
+                border-radius: .25rem;
+
+                & div:nth-child(1) {
+                    display: flex;
+                    flex-direction: column;
+
+                    & span.history-date {
+                        font: var(--subtitle-sm);
+                        color: var(--gray-600);
+                    }
+
+                    & span.history-time {
+                        font: var(--text-xs);
+                        color: var(--gray-500);
+                    }
+                }
+
+                & div:nth-child(2){
+                    background-color: rgba(69, 180, 66, .12);
+                    border-radius: 50%;
+                    padding: .25rem;
+                    width: 2rem;
+                    height: 2rem;
+                }
+
+                &:hover {
+                    background-color: var(--gray-200);
+                }
+            }
+        }
+
+    }
+ 
+    & div#member-card{
+        grid-area: B;
+    }
+    
+    & div#remaining{
+        grid-area: D;
+    }
+}
+
+@media (width < 60em) {
+    main#content {
+        max-width: 100%;
+        padding-inline: .75rem;
+        gap: .5rem;
+
+        margin-top: 1.25rem;
+
+        display: flex;
+        flex-direction: column;
+    }
+}
