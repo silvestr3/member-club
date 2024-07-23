@@ -28,8 +28,8 @@
     --subtitle-sm: 700 .75rem/1.4 var(--ff);
 
     --text-md: 500 1rem/1.4 var(--ff);
-    --text-sm: 500 .875/1.4 var(--ff);
-    --text-xs: 500 .75/1.4 var(--ff);
+    --text-sm: 500 .875rem/1.4 var(--ff);
+    --text-xs: 500 .75rem/1.4 var(--ff);
 }
 
 body {

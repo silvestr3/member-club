@@ -152,6 +152,73 @@ main#content{
  
     & div#member-card{
         grid-area: B;
+        padding: 2.25rem 2rem 2rem 2rem;
+
+        & #card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            & div {
+                display: flex;
+                flex-direction: column;
+                gap: .25rem;
+                color: var(--gray-500);
+
+                max-width: 50%;
+                
+                & h2 {
+                    font: var(--subtitle-md);
+                    text-transform: uppercase;
+                }
+
+                & span {
+                    font: var(--text-sm);
+                }
+            }
+
+            & span#card-id {
+                display: inline-block;
+                background-color: var(--gray-300);
+
+                padding: .375rem .75rem;
+                border-radius: 1rem;
+                color: var(--gray-500);
+                font-weight: 700;
+            }
+
+        }
+
+        & div#card-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 2rem;
+            margin-inline: auto;
+    
+            & .slot {
+                max-width: 90%;
+                aspect-ratio: 1/1;
+                background-color: var(--gray-200);
+                border-radius: 1.25rem;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                & img {
+                    width: 4rem;
+                }
+
+                &:not(.complete):not(.last) {
+                    & img {
+                        display: none;
+                    }
+                }
+                
+            }
+        }
     }
     
     & div#remaining{
@@ -161,7 +228,6 @@ main#content{
 
 @media (width < 60em) {
     main#content {
-        max-width: 100%;
         padding-inline: .75rem;
         gap: .5rem;
 
@@ -169,5 +235,37 @@ main#content{
 
         display: flex;
         flex-direction: column;
+
+        & div#member-card {
+            padding: 1.5rem 1.25rem 1.25rem 1.25rem;
+            & #card-header {
+                align-items: start;
+                & h2 {
+                    font: var(--subtitle-sm);
+                }
+                & span {
+                    font: var(--text-xs);
+                }
+            }
+
+            & div#card-grid {
+                gap: .5rem;
+            }
+        }
+    }
+}
+
+@media (width < 30em){
+    main#content{
+        & div#member-card {
+            & div#card-grid {
+                & .slot {
+                    & img {
+                        width: 2rem;
+                    }
+                }
+
+            }
+        }
     }
 }
