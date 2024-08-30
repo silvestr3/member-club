@@ -7,3 +7,7 @@ import "./libs/dayjs.js";
 import "./styles/global.css";
 import "./styles/header.css";
 import "./styles/content.css";
+
+// JS
+import "./modules/form/submit.js";
+import "./modules/form/input.js";

@@ -9,7 +9,8 @@
   },
   "dependencies": {
     "dayjs": "^1.11.10",
-    "json-server": "^1.0.0-beta.1"
+    "json-server": "^1.0.0-beta.1",
+    "string-mask": "^0.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.23.7",
