@@ -1,8 +1,8 @@
 ## Funcionalidades base
 
 - [ ] Deve ser possível buscar as informações dos clientes através de um ID;
-- [ ] Deve haver uma validação pra saber se é um ID válido e existente;
-- [ ] Deve aparecer um alerta de erro em tela caso seja um ID inválido;
+- [x] Deve haver uma validação pra saber se é um ID válido e existente;
+- [x] Deve aparecer um alerta de erro em tela caso seja um ID inválido;
 
 ### Ao buscar os dados de cada cliente:
 
