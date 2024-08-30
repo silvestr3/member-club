@@ -1,4 +1,5 @@
 import { fetchClientInformation } from "../../services/fetch-client-information";
+import { loadCardChecks } from "../card/load-card-checks";
 import { loadAppointmentsHistory } from "../history/load-appointments-history";
 import { loadClientInformation } from "../info/load-client-info";
 
@@ -26,4 +27,5 @@ form.addEventListener("submit", async (e) => {
   // console.log(data);
   loadClientInformation(data);
   loadAppointmentsHistory(data.appointmentHistory);
+  loadCardChecks(data.loyaltyCard, data.id);
 });
