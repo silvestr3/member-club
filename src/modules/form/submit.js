@@ -1,4 +1,5 @@
 import { fetchClientInformation } from "../../services/fetch-client-information";
+import { loadAppointmentsHistory } from "../history/load-appointments-history";
 import { loadClientInformation } from "../info/load-client-info";
 
 const form = document.querySelector("form");
@@ -24,4 +25,5 @@ form.addEventListener("submit", async (e) => {
 
   // console.log(data);
   loadClientInformation(data);
+  loadAppointmentsHistory(data.appointmentHistory);
 });
