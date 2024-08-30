@@ -2,6 +2,7 @@ import { fetchClientInformation } from "../../services/fetch-client-information"
 import { loadCardChecks } from "../card/load-card-checks";
 import { loadAppointmentsHistory } from "../history/load-appointments-history";
 import { loadClientInformation } from "../info/load-client-info";
+import { loadProgress } from "../progress/load-progress";
 
 const form = document.querySelector("form");
 const clientId = document.querySelector("form input");
@@ -28,4 +29,5 @@ form.addEventListener("submit", async (e) => {
   loadClientInformation(data);
   loadAppointmentsHistory(data.appointmentHistory);
   loadCardChecks(data.loyaltyCard, data.id);
+  loadProgress(data.loyaltyCard);
 });
