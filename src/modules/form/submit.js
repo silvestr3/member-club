@@ -1,4 +1,5 @@
 import { fetchClientInformation } from "../../services/fetch-client-information";
+import { loadClientInformation } from "../info/load-client-info";
 
 const form = document.querySelector("form");
 const clientId = document.querySelector("form input");
@@ -20,4 +21,7 @@ form.addEventListener("submit", async (e) => {
     alert("Cliente não encontrado!");
     return;
   }
+
+  // console.log(data);
+  loadClientInformation(data);
 });
